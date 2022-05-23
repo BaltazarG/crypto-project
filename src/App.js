@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import "./App.css";
+import Crypto from "./components/Crypto";
+import Footer from "./components/Footer";
+import ThemeButton from "./components/ThemeButton";
+import { ThemeContext } from "./components/ThemeContext";
+
+// TODO FAVORITES CRYPTOS
 
 function App() {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={darkMode ? "container-fluid dark" : "container-fluid light"}
+    >
+      <div className="d-flex justify-content-between p-2">
+        <h1 className="text-center">React - Crypto</h1>
+        <ThemeButton />
+      </div>
+
+      <Crypto />
+      <Footer />
     </div>
   );
 }

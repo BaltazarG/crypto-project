@@ -1,0 +1,17 @@
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn-light {
+  border-radius: 20px;
+  padding: 5px;
+  background: transparent;
+}
+
+.btn-dark {
+  border-radius: 20px;
+  padding: 5px;
+  background: transparent;
+}
